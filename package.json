@@ -1,0 +1,8 @@
+{
+  "name": "92green.codes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Dan Coates <dan.coates@blueflag.com.au>",
+  "license": "UNLICENSED",
+  "private": true
+}
