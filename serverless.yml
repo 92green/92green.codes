@@ -1,0 +1,30 @@
+service:
+  name: ninetytwogreen-website
+
+provider:
+  region: ap-southeast-2
+  deploymentBucket: blueflag-serverless-deploy-bucket
+  name: aws
+  runtime: nodejs12.x
+  versionFunctions: false
+
+plugins:
+  - serverless-s3-deploy
+
+package:
+  exclude:
+    - node_modules/**
+
+functions:
+  noop:
+    handler: noop
+
+custom:
+  assets:
+    auto: true
+    targets:
+      - bucket: 92green
+        prefix: website
+        files:
+          - source: ./public/
+            globs: '**/*'
